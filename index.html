@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script src="https://kit.fontawesome.com/2dca9d9a04.js"></script>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="modal.css" />
     <title>Pomodoro Timer</title>
   </head>
   <body>
@@ -27,8 +28,19 @@
         <button id="pause" class="btn">Pause</button>
         <button id="reset" class="btn">Reset</button>
       </div>
+      <div id="settings" class="btn">Settings</div>
       <div class="records">
         <p id="pomo">Pomodoro Count: <span id="count"></span></p>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <!-- Modal -->
+    <div class="modal">
+      <div id="result" class="modal-content">
+        <h1>You Win</h1>
+        <i class="fas fa-hand-rock fa-10x"></i>
+        <p>Computer Chose Rok</p>
       </div>
     </div>
   </body>

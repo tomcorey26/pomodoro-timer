@@ -5,6 +5,8 @@ const pause = document.getElementById("pause");
 const reset = document.getElementById("reset");
 const breakDiv = document.querySelector(".break");
 const count = document.getElementById("count");
+const modal = document.querySelector(".modal");
+const set = document.getElementById("settings");
 
 const settings = {
   workingMinutes: 1,
@@ -98,6 +100,19 @@ function resetTimer() {
   timer.innerHTML = `${settings.workingMinutes}:00`;
   currentTime = settings.workingMinutes;
 }
+
+//hide modal
+function clearModal(e) {
+  if (e.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+function showModal() {
+  modal.style.display = "block";
+}
+
+set.addEventListener("click", showModal);
 start.addEventListener("click", startTimer);
 pause.addEventListener("click", pauseTimer);
 reset.addEventListener("click", resetTimer);
