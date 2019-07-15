@@ -108,6 +108,10 @@ function pauseTimer() {
 
 function resetTimer() {
   clearInterval(countdown);
+  if (onBreak) {
+    timer.innerHTML = `${settings.break}:00`;
+    currentTime = settings.break;
+  }
   timer.innerHTML = `${settings.workingMinutes}:00`;
   currentTime = settings.workingMinutes;
 }
