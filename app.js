@@ -7,12 +7,23 @@ const breakDiv = document.querySelector(".break");
 const count = document.getElementById("count");
 const modal = document.querySelector(".modal");
 const set = document.getElementById("settings");
+const exit = document.querySelector(".exit");
+const save = document.getElementById("save");
 
 const settings = {
-  workingMinutes: 1,
+  workingMinutes: 25,
   break: 5,
   longBreak: 10
 };
+
+const pomo = document.querySelector(".pomoTime");
+const breakT = document.querySelector(".breakTime");
+const longbreakT = document.querySelector(".longbreakTime");
+
+//settings
+pomo.value = settings.workingMinutes;
+breakT.value = settings.break;
+longbreakT.value = settings.longBreak;
 
 //set timer from settings
 timer.innerHTML = `${settings.workingMinutes}:00`;
@@ -102,16 +113,24 @@ function resetTimer() {
 }
 
 //hide modal
-function clearModal(e) {
-  if (e.target == modal) {
-    modal.style.display = "none";
-  }
+function clearModal() {
+  modal.style.display = "none";
 }
 
 function showModal() {
   modal.style.display = "block";
 }
 
+function saveChanges() {
+  settings.workingMinutes = pomo.value;
+  settings.break = breakT.value;
+  settings.longBreak = longbreakT.value;
+  updateTime(settings.workingMinutes, 0);
+  currentTime = settings.workingMinutes;
+}
+
+save.addEventListener("click", saveChanges);
+exit.addEventListener("click", clearModal);
 set.addEventListener("click", showModal);
 start.addEventListener("click", startTimer);
 pause.addEventListener("click", pauseTimer);

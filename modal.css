@@ -34,7 +34,22 @@
   font-size: 1.2rem;
   margin-top: 1rem;
 }
+.exit {
+  font-size: 1rem;
+  padding: 1rem;
+  left: 150px;
+  bottom: 40px;
+  position: relative;
+  color: black;
+  background: red;
+}
 
+input {
+  margin: 1rem;
+}
+.settingInputs {
+  margin-bottom: 1rem;
+}
 @keyframes modalopen {
   from {
     opacity: 0;
